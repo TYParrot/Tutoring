@@ -261,6 +261,20 @@ public final class DrawManager {
 	}
 
 	/**
+	 * Draws level on screen.
+	 *
+	 * @param screen
+	 *            Screen to draw on.
+	 * @param level
+	 *            Current level.
+	 */
+	public void drawLevel(final Screen screen, final int level) {
+		backBufferGraphics.setFont(fontRegular);
+		backBufferGraphics.setColor(Color.WHITE);
+		backBufferGraphics.drawString("Level " + Integer.toString(level), 270, 25);
+	}
+
+	/**
 	 * Draws a thick line from side to side of the screen.
 	 * 
 	 * @param screen
