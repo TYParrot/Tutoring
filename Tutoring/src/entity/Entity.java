@@ -4,6 +4,8 @@ import java.awt.Color;
 
 import engine.DrawManager.SpriteType;
 
+import entity.EnemyShipFormation.*;
+
 /**
  * Implements a generic game entity.
  * 
@@ -120,5 +122,16 @@ public class Entity {
 	 */
 	public final int getHeight() {
 		return this.height;
+	}
+
+	private Color changeColor = Color.WHITE;
+	public void changeColor(){
+		if(changeColor == Color.WHITE){
+			changeColor = Color.BLACK;
+			this.color = changeColor;
+		}else{
+			changeColor = Color.WHITE;
+			this.color = changeColor;
+		}
 	}
 }

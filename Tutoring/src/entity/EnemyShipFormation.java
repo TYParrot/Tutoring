@@ -1,5 +1,6 @@
 package entity;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -146,7 +147,7 @@ public class EnemyShipFormation implements Iterable<EnemyShip> {
 				else
 					spriteType = SpriteType.EnemyShipA1;
 
-				column.add(new EnemyShip((SEPARATION_DISTANCE 
+				column.add(new EnemyShip((SEPARATION_DISTANCE
 						* this.enemyShips.indexOf(column))
 								+ positionX, (SEPARATION_DISTANCE * i)
 								+ positionY, spriteType));
@@ -273,11 +274,17 @@ public class EnemyShipFormation implements Iterable<EnemyShip> {
 				column.removeAll(destroyed);
 			}
 
-			for (List<EnemyShip> column : this.enemyShips)
+			for (List<EnemyShip> column : this.enemyShips) {
 				for (EnemyShip enemyShip : column) {
 					enemyShip.move(movementX, movementY);
+					if(shipCount <= 3)
+						if(Math.random() >= 0.7)
+								enemyShip.changeColor();
+					else if(shipCount <= 3 && enemyShip.getColor() == Color.BLACK)
+							enemyShip.changeColor();
 					enemyShip.update();
 				}
+			}
 		}
 	}
 
@@ -426,4 +433,5 @@ public class EnemyShipFormation implements Iterable<EnemyShip> {
 	public final boolean isEmpty() {
 		return this.shipCount <= 0;
 	}
+
 }
