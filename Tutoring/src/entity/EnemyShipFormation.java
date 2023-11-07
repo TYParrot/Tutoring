@@ -57,6 +57,8 @@ public class EnemyShipFormation implements Iterable<EnemyShip> {
 	/** Screen to draw ships on. */
 	private Screen screen;
 
+	/** Number of enemy bullets. */
+	private double bulletCount;
 	/** List of enemy ships forming the formation. */
 	private List<List<EnemyShip>> enemyShips;
 	/** Minimum time between shots. */
@@ -280,7 +282,7 @@ public class EnemyShipFormation implements Iterable<EnemyShip> {
 					if(shipCount <= 3)
 						if(Math.random() >= 0.7)
 								enemyShip.changeColor();
-					else if(shipCount <= 3 && enemyShip.getColor() == Color.BLACK)
+					else if(shipCount <= 3 && enemyShip.getColor() == Color.darkGray)
 							enemyShip.changeColor();
 					enemyShip.update();
 				}
@@ -344,8 +346,23 @@ public class EnemyShipFormation implements Iterable<EnemyShip> {
 
 		if (this.shootingCooldown.checkFinished()) {
 			this.shootingCooldown.reset();
-			bullets.add(BulletPool.getBullet(shooter.getPositionX()
-					+ shooter.width / 2, shooter.getPositionY(), BULLET_SPEED));
+			bulletCount = Math.random();
+			if(bulletCount <= 0.1){
+				bullets.add(BulletPool.getBullet(shooter.getPositionX()
+						+ shooter.width / 2 - 20, shooter.getPositionY(), BULLET_SPEED));
+				bullets.add(BulletPool.getBullet(shooter.getPositionX()
+						+ shooter.width / 2, shooter.getPositionY(), BULLET_SPEED));
+				bullets.add(BulletPool.getBullet(shooter.getPositionX()
+						+ shooter.width / 2 + 20, shooter.getPositionY(), BULLET_SPEED));
+			} else if (bulletCount <= 0.4 && bulletCount > 0.1) {
+				bullets.add(BulletPool.getBullet(shooter.getPositionX()
+						+ shooter.width / 2 - 10, shooter.getPositionY(), BULLET_SPEED));
+				bullets.add(BulletPool.getBullet(shooter.getPositionX()
+						+ shooter.width / 2 + 10, shooter.getPositionY(), BULLET_SPEED));
+			} else {
+				bullets.add(BulletPool.getBullet(shooter.getPositionX()
+						+ shooter.width / 2, shooter.getPositionY(), BULLET_SPEED));
+			}
 		}
 	}
 

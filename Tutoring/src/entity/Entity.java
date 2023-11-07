@@ -127,7 +127,7 @@ public class Entity {
 	private Color changeColor = Color.WHITE;
 	public void changeColor(){
 		if(changeColor == Color.WHITE){
-			changeColor = Color.BLACK;
+			changeColor = Color.DARK_GRAY;
 			this.color = changeColor;
 		}else{
 			changeColor = Color.WHITE;
