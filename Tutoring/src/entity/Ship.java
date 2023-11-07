@@ -2,6 +2,7 @@ package entity;
 
 import java.awt.Color;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import engine.Cooldown;
 import engine.Core;
@@ -35,12 +36,17 @@ public class Ship extends Entity {
 	 * @param positionY
 	 *            Initial position of the ship in the Y axis.
 	 */
+
+
+	private Logger logger;
+
 	public Ship(final int positionX, final int positionY) {
 		super(positionX, positionY, 13 * 2, 8 * 2, Color.GREEN);
 
 		this.spriteType = SpriteType.Ship;
 		this.shootingCooldown = Core.getCooldown(SHOOTING_INTERVAL);
 		this.destructionCooldown = Core.getCooldown(1000);
+		this.logger = Core.getLogger();
 	}
 
 	/**
@@ -69,9 +75,27 @@ public class Ship extends Entity {
 	public final boolean shoot(final Set<Bullet> bullets) {
 		if (this.shootingCooldown.checkFinished()) {
 			this.shootingCooldown.reset();
-			bullets.add(BulletPool.getBullet(positionX + this.width / 2,
-					positionY, BULLET_SPEED));
-			return true;
+			float percent = (float)(Math.random());
+
+			logger.info("Percent is : " + percent);
+			if(percent<= 0.2) {
+				bullets.add(BulletPool.getBullet(positionX + this.width / 2,
+						positionY, BULLET_SPEED));
+				bullets.add(BulletPool.getBullet(positionX + this.width / 2,
+						positionY - 30, BULLET_SPEED));
+				return true;
+			}
+			else if(percent > 0.2 && percent <=0.8) {
+				bullets.add(BulletPool.getBullet(positionX + this.width / 2,
+						positionY, BULLET_SPEED));
+				return true;
+			}else{
+				bullets.add(BulletPool.getBullet(positionX + this.width / 2 - 10 ,
+						positionY, BULLET_SPEED));
+				bullets.add(BulletPool.getBullet(positionX + this.width / 2 + 10,
+						positionY, BULLET_SPEED));
+				return true;
+			}
 		}
 		return false;
 	}

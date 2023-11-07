@@ -1,19 +1,25 @@
-[INFO|3:04:47]: Started loading resources. 
-[FINE|3:04:47]: Sprite Ship loaded. 
-[FINE|3:04:47]: Sprite ShipDestroyed loaded. 
-[FINE|3:04:47]: Sprite Bullet loaded. 
-[FINE|3:04:47]: Sprite EnemyBullet loaded. 
-[FINE|3:04:47]: Sprite EnemyShipA1 loaded. 
-[FINE|3:04:47]: Sprite EnemyShipA2 loaded. 
-[FINE|3:04:47]: Sprite EnemyShipB1 loaded. 
-[FINE|3:04:47]: Sprite EnemyShipB2 loaded. 
-[FINE|3:04:47]: Sprite EnemyShipC1 loaded. 
-[FINE|3:04:47]: Sprite EnemyShipC2 loaded. 
-[FINE|3:04:47]: Sprite EnemyShipSpecial loaded. 
-[FINE|3:04:47]: Sprite Explosion loaded. 
-[INFO|3:04:47]: Finished loading the sprites. 
-[INFO|3:04:47]: Finished loading the fonts. 
-[INFO|3:04:47]: Starting 448x520 title screen at 60 fps. 
-[INFO|3:04:50]: Closing title screen. 
-[INFO|3:04:50]: Starting 448x520 game screen at 60 fps. 
-[INFO|3:04:50]: Initializing 5x4 ship formation in (20,100) 
+[INFO|4:19:16]: Started loading resources. 
+[FINE|4:19:16]: Sprite Ship loaded. 
+[FINE|4:19:16]: Sprite ShipDestroyed loaded. 
+[FINE|4:19:16]: Sprite Bullet loaded. 
+[FINE|4:19:16]: Sprite EnemyBullet loaded. 
+[FINE|4:19:16]: Sprite EnemyShipA1 loaded. 
+[FINE|4:19:16]: Sprite EnemyShipA2 loaded. 
+[FINE|4:19:16]: Sprite EnemyShipB1 loaded. 
+[FINE|4:19:16]: Sprite EnemyShipB2 loaded. 
+[FINE|4:19:16]: Sprite EnemyShipC1 loaded. 
+[FINE|4:19:16]: Sprite EnemyShipC2 loaded. 
+[FINE|4:19:16]: Sprite EnemyShipSpecial loaded. 
+[FINE|4:19:16]: Sprite Explosion loaded. 
+[INFO|4:19:16]: Finished loading the sprites. 
+[INFO|4:19:16]: Finished loading the fonts. 
+[INFO|4:19:16]: Starting 448x520 title screen at 60 fps. 
+[INFO|4:19:17]: Closing title screen. 
+[INFO|4:19:17]: Starting 448x520 game screen at 60 fps. 
+[INFO|4:19:17]: Initializing 5x4 ship formation in (20,100) 
+[INFO|4:19:28]: Percent is : 0.7288592 
+[INFO|4:19:29]: Destroyed ship in (2,3) 
+[INFO|4:19:29]: Percent is : 0.30595827 
+[INFO|4:19:30]: Destroyed ship in (2,2) 
+[INFO|4:19:30]: Removed enemy 2 from column 2 
+[INFO|4:19:30]: Removed enemy 3 from column 2 
